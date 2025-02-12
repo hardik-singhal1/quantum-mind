@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+:root {
+  --primary-color: #3b82f6;
+  --secondary-color: #10b981;
+  --bg-dark: #0f172a;
+  --text-light: #f8fafc;
+}
+
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.neon-border {
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5), 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+/* ✅ FIXED: Use Tailwind's default dark color */
+@layer components {
+  .btn-primary {
+    @apply px-8 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-500 transition-all;
+  }
+
+  .btn-outline {
+    @apply px-8 py-3 border border-blue-400 text-blue-400 rounded-full hover:bg-blue-400 hover:text-white transition-all;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2 bg-gray-900 text-white border-2 border-blue-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400;
+  }
+
+  .section {
+    @apply py-20;
+  }
+}
